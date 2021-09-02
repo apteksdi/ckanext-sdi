@@ -21,7 +21,7 @@ setup(
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/ahmadkosasih/ckanext-inageo',
+    url='https://repo.big.go.id/kosasih/ckanext-sdi',
 
     # Author details
     author='''Ahmad Kosasih''',
@@ -80,7 +80,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        inageo=ckanext.inageo.plugin:InageoPlugin
+        sdi=ckanext.inageo.plugin:InageoPlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
