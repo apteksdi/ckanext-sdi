@@ -19,9 +19,33 @@ class SDIPlugin(plugins.SingletonPlugin):
         return OrderedDict([
             ('organization', (u'Organization')),
             ('groups', (u'Group')),
-            # ('tags', _(u'Keyword')),
+            ('tags', _(u'Keyword')),
 
-            # ('res_format', _(u'Format')),
+            ('res_format', (u'Format')),
+            # ('accrualPeriodicity', _(u'Update frequency')),
+            # ('datatype', _(u'Type')),
+            # ('tags', _(u'Mot-clé')),
+        ])
+    
+    def organization_facets(self, facets_dict, package_type):
+        return OrderedDict([
+            # ('organization', (u'Organization')),
+            ('groups', (u'Group')),
+            ('tags', _(u'Keyword')),
+
+            ('res_format', (u'Format')),
+            # ('accrualPeriodicity', _(u'Update frequency')),
+            # ('datatype', _(u'Type')),
+            # ('tags', _(u'Mot-clé')),
+        ])
+
+    def group_facets(self, facets_dict, package_type):
+        return OrderedDict([
+            ('organization', (u'Organization')),
+            # ('groups', (u'Group')),
+            ('tags', _(u'Keyword')),
+
+            ('res_format', (u'Format')),
             # ('accrualPeriodicity', _(u'Update frequency')),
             # ('datatype', _(u'Type')),
             # ('tags', _(u'Mot-clé')),
