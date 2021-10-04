@@ -93,7 +93,7 @@ class SDIPlugin(plugins.SingletonPlugin):
         group_id = plugins.toolkit.c.group_dict['id']
         key = 'vocab___category_tag_%s' % group_id
         if not package_type:
-            return OrderedDict([(key, 'Categories'),
+            return OrderedDict([('organization', 'Instansi'),
                                 #('metadata_type', 'Dataset Type'),
                                 #('organization_type', 'Organization Types'),
                                 ('tags', 'Tagging'),
