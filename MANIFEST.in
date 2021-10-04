@@ -1,4 +1,4 @@
 include README.rst
 include LICENSE
 include requirements.txt
-recursive-include ckanext/inageo *.html *.json *.js *.less *.css *.mo
+recursive-include ckanext/sdi *.html *.json *.js *.less *.css *.mo

@@ -90,7 +90,7 @@ Development Installation
 To install ckanext-sdi for development, activate your CKAN virtualenv and
 do::
 
-    git clone https://github.com/kosasih/ckanext-sdi.git
+    git clone https://github.com/apteksdi/ckanext-sdi.git
     cd ckanext-sdi
     python setup.py develop
     pip install -r dev-requirements.txt

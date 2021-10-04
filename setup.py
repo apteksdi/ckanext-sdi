@@ -10,22 +10,22 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='''ckanext-inageo''',
+    name='''ckanext-sdi''',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
     version='0.0.1',
 
-    description='''A spatial extension for CKAN''',
+    description='''CKAN theme for the Satu Data Indonesia open data portal - data.go.id''',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://repo.big.go.id/kosasih/ckanext-sdi',
+    url='https://github.com/apteksdi/ckanext-sdi',
 
     # Author details
-    author='''Ahmad Kosasih''',
-    author_email='''ahmad.kosasih@big.go.id''',
+    author='''Imam Arif Rahman''',
+    author_email='''imam.rahman@support.bappenas.go.id''',
 
     # Choose your license
     license='AGPL',
@@ -43,12 +43,12 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.8',
     ],
 
 
     # What does your project relate to?
-    keywords='''CKAN spatial extension''',
+    keywords='''CKAN Theme extension''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
@@ -80,7 +80,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        sdi=ckanext.inageo.plugin:InageoPlugin
+        sdi=ckanext.sdi.plugin:SDIPlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
