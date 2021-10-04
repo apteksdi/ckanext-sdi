@@ -57,32 +57,50 @@ class SDIPlugin(plugins.SingletonPlugin):
         if package_type != 'dataset':
             return facets_dict
 
-        return OrderedDict([('groups', 'Topics'),
+        return OrderedDict([('groups', 'Kategori'),
                             #('vocab_category_all', 'Topic Categories'),
                             ('metadata_type', 'Dataset Type'),
-                            ('tags', 'Tags'),
-                            ('res_format', 'Formats'),
+                            ('tags', 'Tagging'),
+                            ('res_format', 'Format'),
                             #('organization_type', 'Organization Types'),
-                            ('organization', 'Organizations'),
-                            ('publisher', 'Publishers'),
+                            ('organization', 'Instansi'),
+                            #('publisher', 'Publishers'),
                             #('bureauCode', 'Bureaus'),
-                            # ('extras_progress', 'Progress'),
+                            #('extras_progress', 'Progress'),
                             ])
 
     def organization_facets(self, facets_dict, organization_type, package_type):
 
         if not package_type:
-            return OrderedDict([('groups', 'Topics'),
+            return OrderedDict([('groups', 'Kategori'),
                                 #('vocab_category_all', 'Topic Categories'),
                                 ('metadata_type', 'Dataset Type'),
                                 ('tags', 'Tags'),
                                 ('res_format', 'Formats'),
-                                ('groups', 'Topics'),
+                                ('groups', 'Kategori'),
                                 #('harvest_source_title', 'Harvest Source'),
                                 #('capacity', 'Visibility'),
                                 #('dataset_type', 'Resource Type'),
                                 #('publisher', 'Publishers'),
                                 #('bureauCode', 'Bureaus'),
+                                ])
+        else:
+            return facets_dict
+
+    def group_facets(self, facets_dict, organization_type, package_type):
+
+        # get the categories key
+        group_id = p.toolkit.c.group_dict['id']
+        key = 'vocab___category_tag_%s' % group_id
+        if not package_type:
+            return OrderedDict([(key, 'Categories'),
+                                ('metadata_type', 'Dataset Type'),
+                                #('organization_type', 'Organization Types'),
+                                ('tags', 'Tags'),
+                                ('res_format', 'Formats'),
+                                ('organization', 'Organizations'),
+                                #(key, 'Categories'),
+                                #('publisher', 'Publisher'),
                                 ])
         else:
             return facets_dict
