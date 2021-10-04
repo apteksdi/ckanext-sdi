@@ -87,7 +87,7 @@ class SDIPlugin(plugins.SingletonPlugin):
         else:
             return facets_dict
 
-    def group_facets(self, facets_dict, organization_type, package_type):
+    def group_facets(self, facets_dict, group_type, package_type):
 
         # get the categories key
         group_id = plugins.toolkit.c.group_dict['id']
