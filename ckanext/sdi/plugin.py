@@ -17,8 +17,8 @@ class SDIPlugin(plugins.SingletonPlugin):
     # IFacets
     def dataset_facets(self, facets_dict, package_type):
         return OrderedDict([
-            ('organization', _(u'Organization')),
-            ('groups', _(u'Group')),
+            ('organization', (u'Organization')),
+            ('groups', (u'Group')),
             # ('tags', _(u'Keyword')),
 
             # ('res_format', _(u'Format')),
