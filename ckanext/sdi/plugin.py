@@ -15,43 +15,6 @@ class SDIPlugin(plugins.SingletonPlugin):
         toolkit.add_resource('fanstatic', 'sdi')
 
     # IFacets
-    # def dataset_facets(self, facets_dict, package_type):
-    #     return OrderedDict([
-    #         ('organization', (u'Organization')),
-    #         ('groups', (u'Group')),
-    #         ('tags', (u'Keyword')),
-
-    #         ('res_format', (u'Format')),
-    #         # ('accrualPeriodicity', _(u'Update frequency')),
-    #         # ('datatype', _(u'Type')),
-    #         # ('tags', _(u'Mot-clé')),
-    #     ])
-    
-    # def organization_facets(self, facets_dict, package_type):
-    #     return OrderedDict([
-    #         # ('organization', (u'Organization')),
-    #         ('groups', (u'Group')),
-    #         ('tags', (u'Keyword')),
-
-    #         ('res_format', (u'Format')),
-    #         # ('accrualPeriodicity', _(u'Update frequency')),
-    #         # ('datatype', _(u'Type')),
-    #         # ('tags', _(u'Mot-clé')),
-    #     ])
-
-    # def group_facets(self, facets_dict, package_type):
-    #     return OrderedDict([
-    #         ('organization', (u'Organization')),
-    #         # ('groups', (u'Group')),
-    #         ('tags', (u'Keyword')),
-
-    #         ('res_format', (u'Format')),
-    #         # ('accrualPeriodicity', _(u'Update frequency')),
-    #         # ('datatype', _(u'Type')),
-    #         # ('tags', _(u'Mot-clé')),
-    #     ])
-
-    # IFacets
     def dataset_facets(self, facets_dict, package_type):
 
         if package_type != 'dataset':
@@ -72,12 +35,13 @@ class SDIPlugin(plugins.SingletonPlugin):
     def organization_facets(self, facets_dict, organization_type, package_type):
 
         if not package_type:
-            return OrderedDict([('groups', 'Grup'),
+            return OrderedDict([('organization', 'Instansi'),
+                                ('groups', 'Grup'),
+                                #('organization', 'Instansi'),
                                 #('vocab_category_all', 'Topic Categories'),
                                 #('metadata_type', 'Dataset Type'),
                                 ('tags', 'Tagging'),
                                 ('res_format', 'Format'),
-                                ('groups', 'Grup'),
                                 #('harvest_source_title', 'Harvest Source'),
                                 #('capacity', 'Visibility'),
                                 #('dataset_type', 'Resource Type'),
@@ -94,11 +58,12 @@ class SDIPlugin(plugins.SingletonPlugin):
         key = 'vocab___category_tag_%s' % group_id
         if not package_type:
             return OrderedDict([('groups', 'Grup'),
+                                #('groups', 'Grup'),
+                                ('organization', 'Instansi'),
                                 #('metadata_type', 'Dataset Type'),
                                 #('organization_type', 'Organization Types'),
                                 ('tags', 'Tagging'),
                                 ('res_format', 'Format'),
-                                ('organization', 'Instansi'),
                                 #(key, 'Categories'),
                                 #('publisher', 'Publisher'),
                                 ])
