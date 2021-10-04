@@ -69,7 +69,7 @@ class SDIPlugin(plugins.SingletonPlugin):
                             #('extras_progress', 'Progress'),
                             ])
 
-    def organization_facets(self, facets_dict, package_type):
+    def organization_facets(self, facets_dict, organization_type, package_type):
 
         if not package_type:
             return OrderedDict([('groups', 'Grup'),
@@ -87,13 +87,13 @@ class SDIPlugin(plugins.SingletonPlugin):
         else:
             return facets_dict
 
-    def group_facets(self, facets_dict, package_type):
+    def group_facets(self, facets_dict, group_type, package_type):
 
         # get the categories key
         group_id = plugins.toolkit.c.group_dict['id']
         key = 'vocab___category_tag_%s' % group_id
         if not package_type:
-            return OrderedDict([('organization', 'Instansi'),
+            return OrderedDict([('groups', 'Grup'),
                                 #('metadata_type', 'Dataset Type'),
                                 #('organization_type', 'Organization Types'),
                                 ('tags', 'Tagging'),
