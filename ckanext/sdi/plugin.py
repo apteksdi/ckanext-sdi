@@ -57,7 +57,7 @@ class SDIPlugin(plugins.SingletonPlugin):
         if package_type != 'dataset':
             return facets_dict
 
-        return OrderedDict([('groups', 'Kategori'),
+        return OrderedDict([('groups', 'Grup'),
                             ('organization', 'Instansi'),
                             #('vocab_category_all', 'Topic Categories'),
                             #('metadata_type', 'Dataset Type'),
@@ -72,12 +72,12 @@ class SDIPlugin(plugins.SingletonPlugin):
     def organization_facets(self, facets_dict, organization_type, package_type):
 
         if not package_type:
-            return OrderedDict([('groups', 'Kategori'),
+            return OrderedDict([('groups', 'Grup'),
                                 #('vocab_category_all', 'Topic Categories'),
-                                ('metadata_type', 'Dataset Type'),
-                                ('tags', 'Tags'),
-                                ('res_format', 'Formats'),
-                                ('groups', 'Kategori'),
+                                #('metadata_type', 'Dataset Type'),
+                                ('tags', 'Tagging'),
+                                ('res_format', 'Format'),
+                                ('groups', 'Grup'),
                                 #('harvest_source_title', 'Harvest Source'),
                                 #('capacity', 'Visibility'),
                                 #('dataset_type', 'Resource Type'),
@@ -94,11 +94,11 @@ class SDIPlugin(plugins.SingletonPlugin):
         key = 'vocab___category_tag_%s' % group_id
         if not package_type:
             return OrderedDict([(key, 'Categories'),
-                                ('metadata_type', 'Dataset Type'),
+                                #('metadata_type', 'Dataset Type'),
                                 #('organization_type', 'Organization Types'),
-                                ('tags', 'Tags'),
-                                ('res_format', 'Formats'),
-                                ('organization', 'Organizations'),
+                                ('tags', 'Tagging'),
+                                ('res_format', 'Format'),
+                                ('organization', 'Instansi'),
                                 #(key, 'Categories'),
                                 #('publisher', 'Publisher'),
                                 ])
