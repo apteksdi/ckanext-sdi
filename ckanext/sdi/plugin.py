@@ -58,12 +58,12 @@ class SDIPlugin(plugins.SingletonPlugin):
             return facets_dict
 
         return OrderedDict([('groups', 'Kategori'),
+                            ('organization', 'Instansi'),
                             #('vocab_category_all', 'Topic Categories'),
-                            ('metadata_type', 'Dataset Type'),
+                            #('metadata_type', 'Dataset Type'),
                             ('tags', 'Tagging'),
                             ('res_format', 'Format'),
                             #('organization_type', 'Organization Types'),
-                            ('organization', 'Instansi'),
                             #('publisher', 'Publishers'),
                             #('bureauCode', 'Bureaus'),
                             #('extras_progress', 'Progress'),
@@ -90,7 +90,7 @@ class SDIPlugin(plugins.SingletonPlugin):
     def group_facets(self, facets_dict, organization_type, package_type):
 
         # get the categories key
-        group_id = p.toolkit.c.group_dict['id']
+        group_id = plugins.toolkit.c.group_dict['id']
         key = 'vocab___category_tag_%s' % group_id
         if not package_type:
             return OrderedDict([(key, 'Categories'),
