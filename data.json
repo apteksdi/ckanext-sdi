@@ -1,0 +1,37 @@
+{
+    "@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+    "@id": "http://opendata.jatimprov.go.id/data.json",
+    "@type": "dcat:Catalog",
+    "conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+    "describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+    "dataset": [
+        {
+            "@type": "dcat:Dataset",
+            "accessLevel": "public",
+            "contactPoint": {
+                "fn": "Rustam",
+                "hasEmail": "mailto:noemailprovided@usa.gov"
+            },
+            "distribution": [
+                {
+                    "@type": "dcat:Distribution",
+                    "downloadURL": "http://opendata.jatimprov.go.id/frontend/dataset/1285/csv/download_excel",
+                    "mediaType": "text/csv",
+                    "format": "csv",
+                    "title": "Luas Tambah Serangan OPT (Organisme Pengganggu Tumbuhan) Cabai Menurut Kabupaten/Kota di Jawa Timur"
+                }
+            ],
+            "identifier": "",
+            "issued": "-",
+            "landingPage": "http://opendata.jatimprov.go.id/frontend/dataset/1285/detail",
+            "modified": "2021-06-16",
+            "publisher": {
+                "@type": "org:Organization",
+                "name": "opendata.jatimprov.go.id"
+            },
+            "title": "Luas Tambah Serangan OPT (Organisme Pengganggu Tumbuhan) Cabai Menurut Kabupaten/Kota di Jawa Timur",
+            "description": "Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            "keyword": []
+        }
+    ]
+}
