@@ -21,7 +21,7 @@ class SDIPlugin(plugins.SingletonPlugin):
             return facets_dict
 
         return OrderedDict([('groups', 'Grup'),
-                            ('organization', 'Instansi'),
+                            ('organization', 'Walidata'),
                             #('vocab_category_all', 'Topic Categories'),
                             #('metadata_type', 'Dataset Type'),
                             ('tags', 'Tagging'),
@@ -35,7 +35,7 @@ class SDIPlugin(plugins.SingletonPlugin):
     def organization_facets(self, facets_dict, organization_type, package_type):
 
         if not package_type:
-            return OrderedDict([('organization', 'Instansi'),
+            return OrderedDict([('organization', 'Walidata'),
                                 ('groups', 'Grup'),
                                 #('organization', 'Instansi'),
                                 #('vocab_category_all', 'Topic Categories'),
@@ -59,7 +59,7 @@ class SDIPlugin(plugins.SingletonPlugin):
         if not package_type:
             return OrderedDict([('groups', 'Grup'),
                                 #('groups', 'Grup'),
-                                ('organization', 'Instansi'),
+                                ('organization', 'Walidata'),
                                 #('metadata_type', 'Dataset Type'),
                                 #('organization_type', 'Organization Types'),
                                 ('tags', 'Tagging'),
