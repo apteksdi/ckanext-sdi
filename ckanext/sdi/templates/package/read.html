@@ -64,4 +64,35 @@
     <ul><a href="https://tanahair.indonesia.go.id/" target="_blank"><img src="{{ h.url_for_static('/base/images/geospasialuntuknegeri.png') }}" alt="Geospasial Untuk Negeri"></a></ul>
   {% endif %}
 
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+    <div class="panel-title">{{_('Informasi Dataset')}}</div>
+    </div>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>{{ _('Dataset Dipublikasi') }}:</strong>
+        {{ h.render_datetime(pkg.metadata_created, '%Y-%m-%d') }}
+      </li>
+      <li class="list-group-item">
+        <strong>{{ _('Dataset Dimodifikasi') }}:</strong>
+        {{ h.render_datetime(pkg.metadata_modified, '%Y-%m-%d') }}
+      </li>
+      <li class="list-group-item">
+        <strong>{{ _('Dataset ID') }}:</strong>
+        {{ pkg.id }}
+      </li>
+      <li class="list-group-item">
+        <strong>{{ _('Metadata') }}:</strong>
+        <ul class="list-group" style="margin-bottom: 0;">
+          <li class="list-group-item">
+            <a href="{{h.url_for_static('/', qualified=true)}}api/action/package_show?id={{pkg.id}}" rel="nofollow">
+              {{ _('Link Format JSON') }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
 {% endblock %}
