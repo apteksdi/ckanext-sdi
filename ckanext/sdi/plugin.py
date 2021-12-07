@@ -20,7 +20,8 @@ class SDIPlugin(plugins.SingletonPlugin):
         if package_type != 'dataset':
             return facets_dict
 
-        return OrderedDict([('groups', 'Grup'),
+        return OrderedDict([('kategori', 'Kategori'),
+                            #('groups', 'Grup'),
                             ('organization', 'Walidata'),
                             #('vocab_category_all', 'Topic Categories'),
                             #('metadata_type', 'Dataset Type'),
@@ -28,7 +29,6 @@ class SDIPlugin(plugins.SingletonPlugin):
                             ('res_format', 'Format'),
                             #('organization_type', 'Organization Types'),
                             #('publisher', 'Publishers'),
-                            #('bureauCode', 'Bureaus'),
                             #('extras_progress', 'Progress'),
                             ])
 
@@ -36,7 +36,8 @@ class SDIPlugin(plugins.SingletonPlugin):
 
         if not package_type:
             return OrderedDict([('organization', 'Walidata'),
-                                ('groups', 'Grup'),
+                                ('kategori', 'Kategori'),
+                                #('groups', 'Grup'),
                                 #('organization', 'Instansi'),
                                 #('vocab_category_all', 'Topic Categories'),
                                 #('metadata_type', 'Dataset Type'),
@@ -46,7 +47,6 @@ class SDIPlugin(plugins.SingletonPlugin):
                                 #('capacity', 'Visibility'),
                                 #('dataset_type', 'Resource Type'),
                                 #('publisher', 'Publishers'),
-                                #('bureauCode', 'Bureaus'),
                                 ])
         else:
             return facets_dict
@@ -57,7 +57,7 @@ class SDIPlugin(plugins.SingletonPlugin):
         group_id = plugins.toolkit.c.group_dict['id']
         key = 'vocab___category_tag_%s' % group_id
         if not package_type:
-            return OrderedDict([('groups', 'Grup'),
+            return OrderedDict([('kategori', 'Kategori'),
                                 #('groups', 'Grup'),
                                 ('organization', 'Walidata'),
                                 #('metadata_type', 'Dataset Type'),
