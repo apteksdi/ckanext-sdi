@@ -86,8 +86,13 @@
         <strong>{{ _('Metadata') }}:</strong>
         <ul class="list-group" style="margin-bottom: 0;">
           <li class="list-group-item">
-            <a href="{{h.url_for_static('/', qualified=true)}}api/action/package_show?id={{pkg.id}}" rel="nofollow">
+            <a href="{{h.url_for_static('/', qualified=true)}}api/action/package_show?id={{pkg.id}}" rel="nofollow" target="_blank">
               {{ _('Link Format JSON') }}
+            </a>
+          </li>
+          <li class="list-group-item" style="border: none;">
+            <a href="{{ h.url_for(controller='dataset', action='read', id=pkg.id) }}.rdf" rel="nofollow" target="_blank">
+              {{ _('Link Format RDF/XML') }}
             </a>
           </li>
         </ul>
