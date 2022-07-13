@@ -100,6 +100,19 @@
               {{ _('Link Format RDF/XML') }}
             </a>
           </li>
+
+          {% set harvest_object_id = h.get_pkg_dict_extra(pkg, 'harvest_object_id', None) %}
+          {% if harvest_object_id %}
+          {% if dataset_extent %}
+          <li class="list-group-item" >
+            <strong>{{ _('Standar Metadata') }}:</strong>
+            <a href="/harvest/object/{{ harvest_object_id }}" rel="nofollow" target="_blank">
+            {{ _("ISO:19115 Metadata Record - XML") }}
+            </a>
+          </li>
+          {% endif %}
+          {% endif %}
+
         </ul>
       </li>
     </ul>
