@@ -1,0 +1,53 @@
+{#
+  Renders a media item for a organization. This should be used in a list.
+  
+  organization - A organization dict.
+  
+  Example:
+  
+      <ul class="media-grid">
+        {% for organization in organizations %}
+          {% snippet "organization/snippets/organization_item.html", organization=organization %}
+        {% endfor %}
+      </ul>
+  #}
+  {% if h.ckan_version() > '2.9' %}
+  {% set url = h.url_for(organization.type ~ '.read', id=organization.name) %}
+  {% else %}
+  {% set url = h.url_for(organization.type ~ '_read', action='read', id=organization.name) %}
+  {% endif %}
+  
+  {% block item %}
+  <tr>
+    {% block item_inner %}
+    {% block image %}
+    {% endblock %}
+    {% block title %}
+    <td>
+    <a href="{{ url }}" title="{{ _('View {organization_name}').format(organization_name=organization.display_name) }}">
+      {{ organization.display_name }}
+    </a>
+    </td>
+    {% endblock %}
+    {% block description %}
+    {% endblock %}
+    {% block datasets %}
+    <td>
+      {% if organization.package_count %}
+        <strong class="count">{{ organization.package_count }}</strong>
+      {% else %}
+        <span class="count">{{ _('0') }}</span>
+      {% endif %}
+    </td>
+    {% endblock %}
+    {% block capacity %}
+      {#% if show_capacity and organization.capacity %}
+      <p><span class="label">{{ h.roles_translated().get(organization.capacity, organization.capacity) }}</span></p>
+      {% endif %#}
+    {% endblock %}
+    {% block link %}
+    {% endblock %}
+    {% endblock %}
+    </td>
+  </tr>
+  {% endblock %}
