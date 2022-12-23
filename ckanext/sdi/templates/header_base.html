@@ -86,10 +86,10 @@
     
     <hgroup class="{{ g.header_class }} navbar-left">
       {% block header_logo %} {% if g.site_logo %}
-      <a class="logo" href="https://satudata.go.id/"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" width="74.56"/></a>
+      <a class="logo" href="https://data.go.id/"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" width="74.56"/></a>
       {% else %}
       <h1>
-        <a href="https://satudata.go.id/">{{ g.site_title }}</a>
+        <a href="https://data.go.id/">{{ g.site_title }}</a>
       </h1>
       {% if g.site_description %}
       <h2>{{ g.site_description }}</h2>{% endif %} {% endif %} {% endblock %}
@@ -97,12 +97,21 @@
     
     <div class="collapse navbar-collapse" id="main-navigation-toggle">
       {% block header_site_navigation %}
-      <nav class="section navigation">
-        <ul class="nav nav-pills">
-            {% include 'snippets/header_navigation_items.html' %}
-        </ul>
-      </nav>
-      {% endblock %} 
+	{% if c.userobj %}
+          <nav class="section navigation">
+            <ul class="nav nav-pills">
+              {% include 'snippets/header_navigation_items.html' %}
+            </ul>
+          </nav>
+	{% else %}
+	  <nav class="section navigation">
+            <ul class="nav nav-pills">
+              {% include 'snippets/header_navigation_items_public.html' %}
+            </ul>
+          </nav>
+
+	{% endif %} 	
+      {% endblock %}
       <!-- {% block header_site_search %}
       <form class="section site-search simple-input" action="{% url_for 'dataset.search' %}" method="get">
         <div class="field">
