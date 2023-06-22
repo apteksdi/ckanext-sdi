@@ -32,7 +32,29 @@
                         {{ _('Private') }}
                     </span>
                   {% endif %}
+
+                  {% if h.get_pkg_dict_extra(package, 'prioritas_tahun') == '2022' %}
+                    <span class="dataset-private label label-inverse2 pull-right">
+                    <i class="fa fa-database"></i>
+                    {{ _('PRIORITAS 2022') }}
+                  </span>
+                  {% endif %}
+
+                  {% if h.get_pkg_dict_extra(package, 'prioritas_tahun') == '2023' %}
+                    <span class="dataset-private label label-inverse2 pull-right">
+                    <i class="fa fa-database"></i>
+                    {{ _('PRIORITAS 2023') }}
+                  </span>
+                  {% endif %}
+
+                  {% if h.get_pkg_dict_extra(package, 'prioritas_tahun') == '2024' %}
+                    <span class="dataset-private label label-inverse2 pull-right">
+                    <i class="fa fa-database"></i>
+                    {{ _('PRIORITAS 2024') }}
+                  </span>
+                  {% endif %}
                 {% endblock %}
+                
                 {% block heading_title %}
             {{ h.link_to(h.truncate(title, truncate_title), h.url_for('%s.read' % package.type, id=package.name)) }}
                 {% endblock %}
@@ -42,7 +64,7 @@
                   {% elif package.get('state', '').startswith('deleted') %}
                     <span class="label label-danger">{{ _('Deleted') }}</span>
                   {% endif %}
-                  {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
+                  {{ h.popular('recent views', package.tracking_summary.total, min=10) if package.tracking_summary }}
                 {% endblock %}
               </h2>
             {% endblock %}
