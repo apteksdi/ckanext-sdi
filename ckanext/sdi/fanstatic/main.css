@@ -8294,6 +8294,9 @@ fieldset[disabled] .control-custom.disabled .checkbox.btn.focus {
 .label-inverse {
   background-color: #555555;
 }
+.label-inverse2 {
+  background-color: #D63B00;
+}
 .dataset-private {
   margin-right: 10px;
   text-transform: uppercase;
