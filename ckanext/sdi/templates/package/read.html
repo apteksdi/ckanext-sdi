@@ -3,9 +3,9 @@
 {% block primary_content_inner %}
   {{ super() }}
 
-{% set dataset_extent = h.get_pkg_dict_extra(c.pkg_dict, 'spatial', '') %}
-  {% if not dataset_extent %}
-    <div class="alert-info non-federal"><i class="fa fa-info-circle"></i><span>INFORMASI: Data berikut ini masih dalam proses pemenuhan Prinsip SDI.
+{% set dataset_extent2 = h.get_pkg_dict_extra(c.pkg_dict, 'Hasil_Pemeriksaan_SKDN', '') %}
+  {% if not dataset_extent2 and not h.get_pkg_dict_extra(c.pkg_dict, 'spatial', '') %}
+  <div class="alert-info non-federal"><i class="fa fa-info-circle"></i><span>INFORMASI: Data berikut ini masih dalam proses pemenuhan Prinsip SDI.
     </span></div>
   {% endif %}
 
@@ -72,7 +72,18 @@
 
   {% block package_resources %}
     {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources, is_activity_archive=is_activity_archive %}
-  {% endblock %}
+
+
+  <!-- {% set Hasil_Pemeriksaan_SKDN = "https://data.go.id/sdi-wiki" %}
+  <section class="information module-content" id="access-use">
+    <h3>Status &amp; Pemeriksaan Data</h3>
+    <div class="access-use-main">
+      {% if h.get_pkg_dict_extra(pkg, 'Hasil_Pemeriksaan_SKDN') == '1' %}
+      <span class="access-public"><i class="fa fa-globe"></i><strong><a href="{{Hasil_Pemeriksaan_SKDN}}">Sudah Diperiksa:</a></strong> Data sudah diperiksa dan telah memenuhi Prinsip SDI.</span>
+    </div>  
+  </section>
+  {% endif %}
+  {% endblock %} -->
 
   {% block package_tags %}
     {% snippet "package/snippets/tags.html", tags=pkg.tags %}
@@ -142,9 +153,44 @@
           {% endif %}
           {% endif %}
 
+          {% set Hasil_Pemeriksaan_SKDN = h.get_pkg_dict_extra(pkg, 'Hasil_Pemeriksaan_SKDN', None) %}
+          {% if Hasil_Pemeriksaan_SKDN == '1' %} 
+          <li class="list-group-item" >
+            <strong>{{ _('Status Pemeriksaan Data') }}:</strong>
+            <span class="fa fa-check">
+              <strong><a href="https://data.go.id/sdi-wiki">Sudah Diperiksa</a></strong> (Data sudah diperiksa dan telah memenuhi Prinsip SDI)</span>
+          </li>
+          {% endif %}
         </ul>
       </li>
     </ul>
   </div>
 
+
+  <!-- {% set Hasil_Pemeriksaan_SKDN = h.get_pkg_dict_extra(pkg, 'Hasil_Pemeriksaan_SKDN', None) %}
+  {% if Hasil_Pemeriksaan_SKDN == '1' %}
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+    <div class="panel-title">{{_('Status Pemeriksaan Data')}}</div>
+    </div>
+    <ul class="list-group">
+      
+      <li class="list-group-item">
+        <a href="https://data.go.id/sdi-wiki" rel="nofollow" target="_blank">
+        <strong>{{ _('Sudah Diperiksa') }}:</strong></a>
+        <ul class="list-group" style="margin-bottom: 0;">
+          <li class="list-group-item">
+            
+              {{ _('Data sudah diperiksa dan telah memenuhi Prinsip SDI') }}
+       
+          </li>
+          {% endif %}
+        </ul>
+      </li>
+    </ul>
+  </div> -->
+
+
 {% endblock %}
+}
+
