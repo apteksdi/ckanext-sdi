@@ -12,7 +12,7 @@
   
   {% set exists = [] %}
   {% for extra in pkg.extras %}
-     {% if extra.key == 'data-dictiionary' or extra.key == 'dataDictionary' or extra.key == 'landingPage' or extra.key == 'webService' %}
+     {% if extra.key == 'data-dictionary' or extra.key == 'dataDictionary' or extra.key == 'landingPage' or extra.key == 'webService' %}
          {% do exists.append(1) %}
      {% endif %}
   {% endfor %}
