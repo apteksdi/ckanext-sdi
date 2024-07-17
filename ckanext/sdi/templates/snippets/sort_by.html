@@ -12,6 +12,8 @@ Example:
   <label for="field-order-by">{{ _('Order by') }}</label>
   <select id="field-order-by" name="sort" class="form-control">
     <option value="prioritas_tahun desc"{% if sort =='prioritas_tahun' %} selected="selected"{% endif %}>{{ _('Data Prioritas') }}</option>
+    <option value="publisher_type desc"{% if sort =='publisher_type desc' %} selected="selected"{% endif %}>{{ _('Kementerian/Lembaga') }}</option>
+    <option value="publisher_type asc"{% if sort =='publisher_type asc' %} selected="selected"{% endif %}>{{ _('Daerah') }}</option>
     <option value="title_string asc"{% if sort=='title_string asc' %} selected="selected"{% endif %}>{{ _('Name Ascending') }}</option>
     <option value="title_string desc"{% if sort=='title_string desc' %} selected="selected"{% endif %}>{{ _('Name Descending') }}</option>
     <option value="metadata_modified desc"{% if sort=='metadata_modified desc' %} selected="selected"{% endif %}>{{ _('Last Modified') }}</option>
